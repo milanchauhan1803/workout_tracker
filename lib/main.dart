@@ -1,10 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:workout_tracker/bindings/custom_bindings.dart';
 import 'package:workout_tracker/screens/login_screen/ui/login_screen.dart';
 
-void main() {
+Future<void> main() async {
   CustomBindings().dependencies();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

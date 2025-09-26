@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import '../controller/sing_up_controller.dart';
 
-class SignUpScreen extends GetView<SignUpController>{
+class SignUpScreen extends GetView<SignUpController> {
   const SignUpScreen({super.key});
 
   @override
@@ -30,6 +30,8 @@ class SignUpScreen extends GetView<SignUpController>{
                 ),
                 SizedBox(height: 7.5),
                 TextFormField(
+                  controller: controller.nameController,
+                  keyboardType: TextInputType.name,
                   decoration: InputDecoration(
                     hintText: "Please enter your Name",
                   ),
@@ -45,6 +47,7 @@ class SignUpScreen extends GetView<SignUpController>{
                 ),
                 SizedBox(height: 7.5),
                 TextFormField(
+                  controller: controller.emailController,
                   decoration: InputDecoration(
                     hintText: "Please enter your email",
                   ),
@@ -60,6 +63,7 @@ class SignUpScreen extends GetView<SignUpController>{
                 ),
                 SizedBox(height: 7.5),
                 TextFormField(
+                  controller: controller.phoneController,
                   decoration: InputDecoration(
                     hintText: "Please enter your phone number",
                   ),
@@ -81,21 +85,6 @@ class SignUpScreen extends GetView<SignUpController>{
                 ),
                 SizedBox(height: 15),
                 Text(
-                  "Phone Number",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                  ),
-                ),
-                SizedBox(height: 7.5),
-                TextFormField(
-                  decoration: InputDecoration(
-                    hintText: "Please enter your phone number",
-                  ),
-                ),
-                SizedBox(height: 15),
-                Text(
                   "Date Of Birth",
                   style: TextStyle(
                     color: Colors.black,
@@ -105,6 +94,13 @@ class SignUpScreen extends GetView<SignUpController>{
                 ),
                 SizedBox(height: 7.5),
                 TextFormField(
+                  onTap: (){
+                    DatePickerDialog(
+                      initialDate: DateTime.now(),
+                      firstDate: DateTime(1900),
+                      lastDate: DateTime.now(),
+                    );
+                  },
                   decoration: InputDecoration(
                     hintText: "Please select your DOB",
                   ),
@@ -120,6 +116,7 @@ class SignUpScreen extends GetView<SignUpController>{
                 ),
                 SizedBox(height: 7.5),
                 TextFormField(
+                  controller: controller.passwordController,
                   decoration: InputDecoration(
                     hintText: "Please enter your password",
                   ),
@@ -132,12 +129,7 @@ class SignUpScreen extends GetView<SignUpController>{
                 Center(
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext) => SignUpScreen(),
-                        ),
-                      );
+                      controller.signUp();
                     },
                     child: Text("Sign up"),
                   ),

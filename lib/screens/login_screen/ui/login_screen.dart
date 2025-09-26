@@ -30,6 +30,8 @@ class LoginScreen extends GetView<LoginController> {
                 ),
                 SizedBox(height: 7.5),
                 TextFormField(
+                  controller: controller.emailController,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     hintText: "Please enter your email",
                   ),
@@ -44,9 +46,28 @@ class LoginScreen extends GetView<LoginController> {
                   ),
                 ),
                 SizedBox(height: 7.5),
-                TextFormField(
-                  decoration: InputDecoration(
-                    hintText: "Please enter your password",
+                Obx(
+                  () => TextFormField(
+                    controller: controller.passwordController,
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: controller.isObscure.value,
+                    decoration: InputDecoration(
+                      hintText: "Please enter your password",
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          if (controller.isObscure.value) {
+                            controller.isObscure.value = false;
+                          } else {
+                            controller.isObscure.value = true;
+                          }
+                        },
+                        icon: Icon(
+                          (controller.isObscure.value)
+                              ? Icons.remove_red_eye
+                              : Icons.remove_red_eye_outlined,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ],

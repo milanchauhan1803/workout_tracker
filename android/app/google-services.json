@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "443496083799",
+    "project_id": "workouttracker-fb3b5",
+    "storage_bucket": "workouttracker-fb3b5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443496083799:android:999e18af63803ded9b4e12",
+        "android_client_info": {
+          "package_name": "com.example.workout_tracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVcAZtsXYP6WzjV8WpHLmhQCILAELgQlo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
