@@ -78,12 +78,7 @@ class LoginScreen extends GetView<LoginController> {
                 Center(
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext) => SignUpScreen(),
-                        ),
-                      );
+                      controller.validateFields();
                     },
                     child: Text("Login"),
                   ),
@@ -93,7 +88,14 @@ class LoginScreen extends GetView<LoginController> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Do you already have an account?"),
-                    Text(" Add account"),
+                    TextButton(onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext) => SignUpScreen(),
+                        ),
+                      );
+                    }, child: Text(" Add account")),
                   ],
                 ),
               ],
