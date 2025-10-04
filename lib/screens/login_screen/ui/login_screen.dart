@@ -88,14 +88,17 @@ class LoginScreen extends GetView<LoginController> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Do you already have an account?"),
-                    TextButton(onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext) => SignUpScreen(),
-                        ),
-                      );
-                    }, child: Text(" Add account")),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext) => SignUpScreen(),
+                          ),
+                        );
+                      },
+                      child: Text(" Add account"),
+                    ),
                   ],
                 ),
               ],

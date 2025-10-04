@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:workout_tracker/bindings/custom_bindings.dart';
+import 'package:workout_tracker/screens/home_screen/ui/home_screen.dart';
 import 'package:workout_tracker/screens/login_screen/ui/login_screen.dart';
 
 Future<void> main() async {
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: LoginScreen(),
+      home: HomeScreen(),
     );
   }
 }
