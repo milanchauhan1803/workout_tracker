@@ -22,7 +22,7 @@ class HomeScreen extends GetView<HomeController> {
           onSelected: (value) {},
           itemBuilder: (context) => [
             const PopupMenuItem(value: "home", child: Text("Home")),
-            const PopupMenuItem(value: "workout", child: Text("Workout")),
+            const PopupMenuItem(value: "workout_screen", child: Text("Workout")),
           ],
         ),
         actions: [
@@ -51,7 +51,7 @@ class HomeScreen extends GetView<HomeController> {
                   child: Column(
                     children: [
                       const Text(
-                        "No workout started yet",
+                        "No workout_screen started yet",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
@@ -192,6 +192,11 @@ class HomeScreen extends GetView<HomeController> {
       /// Bottom Navigation
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color(0xFF0A0E21),
+        onTap: (int index){
+          if(index == 0) Get.toNamed('/home');
+          if(index == 1) Get.toNamed('/workout');
+          if(index == 2) Get.toNamed('/profile');
+        },
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
         items: const [

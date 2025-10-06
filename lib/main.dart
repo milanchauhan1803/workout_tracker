@@ -2,8 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:workout_tracker/bindings/custom_bindings.dart';
+import 'package:workout_tracker/screens/edit_profile_screen/ui/eidt_profile_screen.dart';
 import 'package:workout_tracker/screens/home_screen/ui/home_screen.dart';
 import 'package:workout_tracker/screens/login_screen/ui/login_screen.dart';
+import 'package:workout_tracker/screens/workout_screen/ui/workout_screen.dart';
 
 Future<void> main() async {
   CustomBindings().dependencies();
@@ -39,6 +41,13 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: HomeScreen(),
+      initialRoute: '/home',
+
+      getPages: [
+        GetPage(name: '/home', page: () => const HomeScreen()),
+        GetPage(name: '/workout', page: () => const WorkoutScreen()),
+        GetPage(name: '/profile', page: () => const EditProfileScreen()),
+      ],
     );
   }
 }
